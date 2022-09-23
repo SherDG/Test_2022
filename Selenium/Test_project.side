@@ -1,0 +1,142 @@
+{
+  "id": "9d3ea571-6bf7-4923-ae88-80748414a222",
+  "version": "2.0",
+  "name": "Test_project",
+  "url": "https://demoqa.com",
+  "tests": [{
+    "id": "9ebb3945-f021-4d00-83df-66744c89f769",
+    "name": "DemoQA_smoke_test",
+    "commands": [{
+      "id": "d35ee539-42fa-454f-8710-9ec5d44b8cec",
+      "comment": "",
+      "command": "open",
+      "target": "https://demoqa.com/login",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "890a4a77-b32b-4cad-a026-8d4386c34b1f",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1920x1040",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4889874a-dbd8-4cf9-b0bd-cc0849704297",
+      "comment": "",
+      "command": "type",
+      "target": "id=userName",
+      "targets": [
+        ["id=userName", "id"],
+        ["css=#userName", "css:finder"],
+        ["xpath=//input[@id='userName']", "xpath:attributes"],
+        ["xpath=//div[@id='userName-wrapper']/div[2]/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "user123"
+    }, {
+      "id": "227e476d-1994-476d-8964-83097e7f5251",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[@id='password-wrapper']/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div[2]/input", "xpath:position"]
+      ],
+      "value": "ex95esjV%"
+    }, {
+      "id": "f67ca48f-a827-4c71-834e-a5e43c7ab77e",
+      "comment": "",
+      "command": "click",
+      "target": "id=login",
+      "targets": [
+        ["id=login", "id"],
+        ["css=#login", "css:finder"],
+        ["xpath=//button[@id='login']", "xpath:attributes"],
+        ["xpath=//form[@id='userForm']/div[4]/div/button", "xpath:idRelative"],
+        ["xpath=//div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Login')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "98027a88-053e-4dcf-9913-90240e979b19",
+      "comment": "",
+      "command": "click",
+      "target": "//*[@id=\"submit\"]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "86f4fb83-f9f7-4091-8f13-7fd2f679c83e",
+      "comment": "",
+      "command": "assertText",
+      "target": "//*[@id=\"userForm\"]/div[1]/h2",
+      "targets": [],
+      "value": "Welcome,"
+    }]
+  }, {
+    "id": "4c707813-0da6-4689-8a2e-d93b19930d4c",
+    "name": "Page_surf",
+    "commands": [{
+      "id": "82606fb2-084c-4ad0-b742-138f53cbfe51",
+      "comment": "",
+      "command": "open",
+      "target": "https://demoqa.com/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "91f188dc-d3a5-43bb-8427-1f692cfb6c8d",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1920x1040",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fe1af1d2-3b0d-4273-8c24-6634d5d81659",
+      "comment": "",
+      "command": "click",
+      "target": "css=.card:nth-child(1) path",
+      "targets": [
+        ["css=.card:nth-child(1) path", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "3656ae07-a162-485c-8be0-8b1e8dd98301",
+      "comment": "",
+      "command": "click",
+      "target": "css=.show #item-0 > .text",
+      "targets": [
+        ["css=.show #item-0 > .text", "css:finder"],
+        ["xpath=//li[@id='item-0']/span", "xpath:idRelative"],
+        ["xpath=//li/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Text Box')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "387fe6c8-4c39-41f5-acc7-25d0a58df616",
+      "comment": "",
+      "command": "assertText",
+      "target": "//*[@id=\"permanentAddress-label\"]",
+      "targets": [],
+      "value": "Permanent Address"
+    }, {
+      "id": "cebfb824-14ec-4818-9bbe-39aa2f6f2021",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "51f5328c-4c42-420a-a221-568335292f5f",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["https://demoqa.com/"],
+  "plugins": []
+}
