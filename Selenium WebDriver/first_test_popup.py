@@ -15,6 +15,7 @@ options = Options()
 options.add_argument("--no-sandbox")
 
 driver = webdriver.Chrome(service=Service('/home/dima/Завантаження/Hillel/chromedriver'), options=options)
+# driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
 
 user = "guest"
 password = "welcome2qauto"
