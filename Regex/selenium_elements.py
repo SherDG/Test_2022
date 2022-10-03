@@ -19,12 +19,12 @@ driver.maximize_window()
 
 #get method to launch the URL
 driver.get("https://www.tutorialspoint.com/index.htm")
-
+time.sleep(2)
 #to refresh the browser
 # driver.refresh()
 
 # search the input tag which contains the 'id' attribute starts with 'search' text.
-driver. find_element(By.CSS_SELECTOR, "input[id^='search']']").send_keys("Selenium")
+driver. find_element(By.CSS_SELECTOR, "input[id^='search']").send_keys("Selenium")
 
 
 # search the input tag which contains the 'id' attribute ending with 'strings' text.
