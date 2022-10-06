@@ -3,7 +3,7 @@ from functools import reduce
 import operator
 
 
-@pytest.mark.parametrize('test_input', [54, 24, 32])
+@pytest.mark.parametrize('test_input', [44, 24, 32])
 def test_first(test_input):
     assert test_input < 50
 

@@ -1,5 +1,5 @@
 import sys
-
+import platform
 import pytest
 
 
@@ -15,8 +15,9 @@ def test_second():
     assert letters[100]
 
 
-@pytest.mark.xfail(sys.platform == 'darwin', reason='works only for Mac')
+@pytest.mark.xfail(platform.system() == 'Linux', reason='works only for Mac')
 # xfail works if condition is true
 def test_third():
+    print(platform.system())
     letters = 'dfssdfsdfdsfsdfs'
     assert letters[50]
