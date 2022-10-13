@@ -3,24 +3,6 @@
 	"name": "Hillel Garage",
 	"values": [
 		{
-			"key": "mail",
-			"value": "xeyerev403@ovout.com",
-			"type": "default",
-			"enabled": true
-		},
-		{
-			"key": "pass",
-			"value": "Xeyerev403@",
-			"type": "default",
-			"enabled": true
-		},
-		{
-			"key": "carId",
-			"value": "1",
-			"type": "any",
-			"enabled": true
-		},
-		{
 			"key": "URL",
 			"value": "https://qauto2.forstudy.space",
 			"type": "default",
