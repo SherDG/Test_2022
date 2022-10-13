@@ -1,0 +1,33 @@
+{
+	"id": "0f0c99af-dbc3-472d-8231-6d1cacdbed2d",
+	"name": "Hillel Garage",
+	"values": [
+		{
+			"key": "mail",
+			"value": "xeyerev403@ovout.com",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "pass",
+			"value": "Xeyerev403@",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "carId",
+			"value": "1",
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "URL",
+			"value": "https://qauto2.forstudy.space",
+			"type": "default",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2022-10-13T11:40:53.746Z",
+	"_postman_exported_using": "Postman/10.0.19"
+}
