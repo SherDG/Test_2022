@@ -321,16 +321,7 @@
 							"\r",
 							"var jsonData = pm.response.json();\r",
 							"var carId = jsonData.data.id;\r",
-							"pm.collectionVariables.set('cardId', carId);\r",
-							"pm.environment.set('carId', carId);\r",
-							"pm.globals.set('carId', carId);\r",
-							"\r",
-							"// let responseHeaders1 = pm.response.headers.all();\r",
-							"// pm.test(\"Test all headers\", function () {\r",
-							"//     pm.expect(responseHeaders1).to.eql(pm.collectionVariables.get('headers'));\r",
-							"// });\r",
-							"\r",
-							"// console.log(carId);"
+							"pm.collectionVariables.set('cardId', carId);"
 						],
 						"type": "text/javascript"
 					}
@@ -340,7 +331,7 @@
 					"script": {
 						"exec": [
 							"var milage = Math.floor(Math.random() * 100);",
-							"pm.globals.set('milageNew', milage);"
+							"pm.collectionVariables.set('milageNew', milage);"
 						],
 						"type": "text/javascript"
 					}
@@ -389,7 +380,7 @@
 					"listen": "prerequest",
 					"script": {
 						"exec": [
-							"var previuosMilage = pm.globals.get('milageNew');",
+							"var previuosMilage = pm.collectionVariables.get('milageNew');",
 							"",
 							"var newMilage = parseInt(previuosMilage) + 100;",
 							"",
@@ -720,6 +711,15 @@
 		},
 		{
 			"key": "newMilage",
+			"value": ""
+		},
+		{
+			"key": "new_var",
+			"value": "https://qauto2.forstudy.space",
+			"type": "string"
+		},
+		{
+			"key": "milageNew",
 			"value": ""
 		}
 	]
