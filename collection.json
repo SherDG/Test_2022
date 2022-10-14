@@ -1,0 +1,726 @@
+{
+	"info": {
+		"_postman_id": "f6bdb928-9c59-495f-85f0-d78fdd20118d",
+		"name": "Hillel 2022",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "408166"
+	},
+	"item": [
+		{
+			"name": "Sign In",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"HISQM230622-167 Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// pm.test(\"Your test name\", function () {",
+							"//     var jsonData = pm.response.json();",
+							"//     pm.expect(jsonData.data.userId).to.eql(5756);",
+							"// });",
+							"",
+							"pm.test(\"Response time is less than 900ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(900);",
+							"});",
+							"",
+							"",
+							"// console.log(responseHeaders1);",
+							"let responseHeaders1 = pm.response.headers.all();",
+							"pm.collectionVariables.set('headers', responseHeaders1);",
+							"",
+							"",
+							"pm.test(\"Test all headers\", function () {",
+							"    pm.expect(responseHeaders1).to.eql(pm.collectionVariables.get('headers'));",
+							"});",
+							"",
+							"pm.test(\"Content-Type value is correct\", function () {",
+							"   pm.expect(pm.response.headers.get('Content-Type')).to.include('application');",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "Xeyerev403@",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "xeyerev403@ovout.com",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "Basic Z3Vlc3Q6d2VsY29tZTJxYXV0bw==",
+						"type": "text"
+					},
+					{
+						"key": "Accept-Encoding",
+						"value": "utf-8",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Accept-Encoding",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"{{mail}}\",\n    \"password\": \"{{pass}}\",\n    \"remember\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/api/auth/signin",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"auth",
+						"signin"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Sign In Positive",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Basic Z3Vlc3Q6d2VsY29tZTJxYXV0bw==",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Encoding",
+								"value": "utf-8",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Accept-Encoding",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"{{mail}}\",\n    \"password\": \"{{pass}}\",\n    \"remember\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/auth/signin",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"signin"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx/1.18.0 (Ubuntu)"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 15 Aug 2022 18:14:13 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "111"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "30"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "29"
+						},
+						{
+							"key": "X-RateLimit-Reset",
+							"value": "1660587289"
+						},
+						{
+							"key": "Set-Cookie",
+							"value": "remember_me=d8097def83e83476f99c41f4fed2f072829c31ef305aca1a71be6d7bfb7602df; Max-Age=2592000; Domain=.forstudy.space; Path=/; Expires=Wed, 14 Sep 2022 18:14:13 GMT"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"6f-8781heAzmB85OhZ6wmNc5z432Ic\""
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"ok\",\n    \"data\": {\n        \"userId\": 5756,\n        \"photoFilename\": \"default-user.png\",\n        \"distanceUnits\": \"km\",\n        \"currency\": \"usd\"\n    }\n}"
+				},
+				{
+					"name": "Sign In Error",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Basic Z3Vlc3Q6d2VsY29tZTJxYXV0bw==",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Encoding",
+								"value": "utf-8",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Accept-Encoding",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"{{mail}}\",\n    \"password\": \"{{pass}}\",\n    \"remember\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/auth/signin",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"signin"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx/1.18.0 (Ubuntu)"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 15 Aug 2022 18:15:01 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "40"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"28-V9wAun+a5LB4BjI+/aCR6eVRV9s\""
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"error\",\n    \"message\": \"Not found\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Add Car",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"status is okay\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.status).to.eql(\"ok\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 500ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+							"});\r",
+							"\r",
+							"var jsonData = pm.response.json();\r",
+							"var carId = jsonData.data.id;\r",
+							"pm.collectionVariables.set('cardId', carId);\r",
+							"pm.environment.set('carId', carId);\r",
+							"pm.globals.set('carId', carId);\r",
+							"\r",
+							"// let responseHeaders1 = pm.response.headers.all();\r",
+							"// pm.test(\"Test all headers\", function () {\r",
+							"//     pm.expect(responseHeaders1).to.eql(pm.collectionVariables.get('headers'));\r",
+							"// });\r",
+							"\r",
+							"// console.log(carId);"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"var milage = Math.floor(Math.random() * 100);",
+							"pm.globals.set('milageNew', milage);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"carBrandId\": 1,\r\n    \"carModelId\": 1,\r\n    \"mileage\": {{milageNew}}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/api/cars",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"cars"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mileage Update",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"var previuosMilage = pm.globals.get('milageNew');",
+							"",
+							"var newMilage = parseInt(previuosMilage) + 100;",
+							"",
+							"pm.collectionVariables.set('newMilage', newMilage);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"mileage\": {{newMilage}}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://qauto2.forstudy.space/api/cars/{{cardId}}",
+					"protocol": "https",
+					"host": [
+						"qauto2",
+						"forstudy",
+						"space"
+					],
+					"path": [
+						"api",
+						"cars",
+						"{{cardId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Car",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/api/cars/{{cardId}}",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"cars",
+						"{{cardId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Check fuel expense",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const schema = {\r",
+							"    \"type\": \"object\",\r",
+							"    \"properties\": {\r",
+							"        \"status\": {\r",
+							"            \"type\": \"string\"\r",
+							"        },\r",
+							"        \"data\": {\r",
+							"            \"type\": \"array\",\r",
+							"            \"items\": [\r",
+							"                {\r",
+							"                    \"type\": \"object\",\r",
+							"                    \"properties\": {\r",
+							"                        \"id\": {\r",
+							"                            \"type\": \"integer\"\r",
+							"                        },\r",
+							"                        \"carId\": {\r",
+							"                            \"type\": \"integer\"\r",
+							"                        },\r",
+							"                        \"reportedAt\": {\r",
+							"                            \"type\": \"string\"\r",
+							"                        },\r",
+							"                        \"mileage\": {\r",
+							"                            \"type\": \"integer\"\r",
+							"                        },\r",
+							"                        \"liters\": {\r",
+							"                            \"type\": \"integer\"\r",
+							"                        },\r",
+							"                        \"totalCost\": {\r",
+							"                            \"type\": \"integer\"\r",
+							"                        }\r",
+							"                    }\r",
+							"                }\r",
+							"            ]\r",
+							"        },\r",
+							"        \"currentPage\": {\r",
+							"            \"type\": \"integer\"\r",
+							"        },\r",
+							"        \"totalItems\": {\r",
+							"            \"type\": \"integer\"\r",
+							"        }\r",
+							"    },\r",
+							"    \"required\": [\r",
+							"        \"status\",\r",
+							"        \"data\",\r",
+							"        \"currentPage\",\r",
+							"        \"totalItems\"\r",
+							"    ]\r",
+							"};\r",
+							"\r",
+							"pm.test(\"Validating schema\", () => {\r",
+							"    pm.response.to.have.jsonSchema(schema);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://qauto2.forstudy.space/api/expenses?carId=20502",
+					"protocol": "https",
+					"host": [
+						"qauto2",
+						"forstudy",
+						"space"
+					],
+					"path": [
+						"api",
+						"expenses"
+					],
+					"query": [
+						{
+							"key": "carId",
+							"value": "20502"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Cars",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Content-Type is present\", function () {",
+							"    pm.response.to.have.header(\"Content-Type\");",
+							"});",
+							"",
+							"// pm.test(\"Check updatedMileageAt\", function () {",
+							"//     var jsonData = pm.response.json();",
+							"//     pm.expect(jsonData.data[0].updatedMileageAt).to.eql('2022-08-11T18:03:02.000Z');",
+							"// });"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "Basic Z3Vlc3Q6d2VsY29tZTJxYXV0bw==",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://qauto2.forstudy.space/api/cars",
+					"protocol": "https",
+					"host": [
+						"qauto2",
+						"forstudy",
+						"space"
+					],
+					"path": [
+						"api",
+						"cars"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get api-logs",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "Basic Z3Vlc3Q6d2VsY29tZTJxYXV0bw==",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://qauto2.forstudy.space/api-logs",
+					"protocol": "https",
+					"host": [
+						"qauto2",
+						"forstudy",
+						"space"
+					],
+					"path": [
+						"api-logs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Regex",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var phone = \"800-800-800\";",
+							"",
+							"var response = pm.response.json();",
+							"// console.log(response.headers[\"x-forwarded-port\"]);",
+							"",
+							"pm.test(\"Regex phone number\", function () {",
+							"    pm.expect(phone).to.match(/^\\d{3}-\\d{3}-\\d{3}$/);",
+							"});",
+							"",
+							"pm.test(\"Body matches regex numbers\", function () {",
+							"    pm.expect(response.headers[\"x-forwarded-port\"]).to.match (/^[0-9]/);",
+							"});",
+							"",
+							"pm.test(\"Body matches regex strings\", function () {",
+							"    pm.expect(response.headers[\"x-forwarded-proto\"]).to.match (/^[a-z]/);",
+							"});",
+							"",
+							"pm.test(\"Body matches regex URL\", function () {",
+							"    pm.expect(response.url).to.match (/^(?:https?:\\/\\/)?(?:[^@\\/\\n]+@)?(?:www\\.)?([^:\\/\\n]+)/);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://postman-echo.com/get?test=123",
+					"protocol": "https",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"get"
+					],
+					"query": [
+						{
+							"key": "test",
+							"value": "123"
+						}
+					]
+				},
+				"description": "The HTTP `GET` request method is meant to retrieve data from a server. The data\nis identified by a unique URI (Uniform Resource Identifier). \n\nA `GET` request can pass parameters to the server using \"Query String \nParameters\". For example, in the following request,\n\n> http://example.com/hi/there?hand=wave\n\nThe parameter \"hand\" has the value \"wave\".\n\nThis endpoint echoes the HTTP headers, request parameters and the complete\nURI requested."
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "headers",
+			"value": ""
+		},
+		{
+			"key": "URL",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "cardId",
+			"value": ""
+		},
+		{
+			"key": "newMilage",
+			"value": ""
+		}
+	]
+}
